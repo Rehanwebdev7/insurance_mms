@@ -1,5 +1,5 @@
 export const THEME_CONFIG = {
-  defaultTheme: 'light' as const,
+  defaultTheme: 'dark' as const,
   primaryColors: [
     { name: 'Royal Blue', hex: '#2563eb' },
     { name: 'Emerald Green', hex: '#059669' },

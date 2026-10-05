@@ -13,7 +13,7 @@ const settings = storageService.getSettings();
 
 const initialState: UiState = {
   sidebarOpen: true,
-  themeMode: (settings.themeMode as 'light' | 'dark') || 'light',
+  themeMode: (settings.themeMode as 'light' | 'dark') || 'dark',
   primaryColor: settings.primaryColor || '#2563eb',
   searchOpen: false,
   activeTab: 'all',

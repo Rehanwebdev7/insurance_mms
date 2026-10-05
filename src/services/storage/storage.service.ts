@@ -79,7 +79,7 @@ class StorageService {
         agencyPhone: '+91 1800 555 0199',
         agencyAddress: 'Financial District, Nanakramguda, Hyderabad 500032',
         primaryColor: '#2563eb',
-        themeMode: 'light',
+        themeMode: 'dark',
         currency: 'INR',
         dateFormat: 'DD MMM YYYY',
         pageSize: 10,
