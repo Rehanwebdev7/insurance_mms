@@ -1,11 +1,11 @@
 export const BRANDING_CONFIG = {
-  appName: 'InsureFlow',
-  companyName: 'InsureFlow Agency Solutions Pvt. Ltd.',
+  appName: 'MH Insurance',
+  companyName: 'MH Insurance Solutions Pvt. Ltd.',
   tagline: 'End-to-End Insurance Management System',
-  supportEmail: 'support@insureflow.demo',
+  supportEmail: 'support@mhinsurance.demo',
   supportPhone: '+91 1800 555 0199',
-  logoText: 'InsureFlow',
-  logoMarkText: 'IF',
+  logoText: 'MH Insurance',
+  logoMarkText: 'MH',
   faviconUrl: '/favicon.svg',
-  footerText: '© 2026 InsureFlow Systems. Enterprise Grade Insurance Portal.',
+  footerText: '© 2026 MH Insurance Systems. Enterprise Grade Insurance Portal.',
 };

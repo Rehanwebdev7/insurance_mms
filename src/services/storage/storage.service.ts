@@ -74,8 +74,8 @@ class StorageService {
     }
     if (!localStorage.getItem(KEYS.SETTINGS)) {
       const initialSettings: SystemSettings = {
-        agencyName: 'InsureFlow Agency Solutions',
-        agencyEmail: 'admin@insureflow.demo',
+        agencyName: 'MH Insurance',
+        agencyEmail: 'admin@mhinsurance.demo',
         agencyPhone: '+91 1800 555 0199',
         agencyAddress: 'Financial District, Nanakramguda, Hyderabad 500032',
         primaryColor: '#2563eb',

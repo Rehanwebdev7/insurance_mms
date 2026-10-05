@@ -11,7 +11,7 @@ export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const { loginUser } = useAuth();
 
-  const [email, setEmail] = useState('admin@insureflow.demo');
+  const [email, setEmail] = useState('admin@mhinsurance.demo');
   const [password, setPassword] = useState('Admin@123');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +20,7 @@ export const LoginPage: React.FC = () => {
     { name: 'Super Admin', email: 'admin@insureflow.demo', role: 'SUPER_ADMIN', desc: 'Unrestricted full system access' },
     { name: 'Branch Manager', email: 'manager@insureflow.demo', role: 'MANAGER', desc: 'Customer, Policy & Discount approvals' },
     { name: 'Accountant', email: 'accountant@insureflow.demo', role: 'ACCOUNTANT', desc: 'Customer payments & Company remittances' },
-    { name: 'Agent', email: 'agent@insureflow.demo', role: 'AGENT', desc: 'Lead customer creation & policy issuance' },
+    { name: 'Agent', email: 'agent@insureflow.demo', role: 'AGENT', desc: 'Lead customer onboarding & policy issuance' },
     { name: 'Auditor', email: 'viewer@insureflow.demo', role: 'VIEWER', desc: 'Read-only compliance mode' },
   ];
 
