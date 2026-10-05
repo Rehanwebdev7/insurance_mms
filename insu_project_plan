@@ -1,0 +1,2635 @@
+You are a SENIOR FULL-STACK ARCHITECT, SENIOR REACT/TYPESCRIPT ENGINEER, UI/UX DESIGNER, PRODUCT ARCHITECT and INSURANCE MANAGEMENT SYSTEM DOMAIN EXPERT.
+
+Your task is to BUILD a complete, professional, scalable and production-ready FRONTEND DEMO of an:
+
+# INSURANCE MANAGEMENT SYSTEM
+
+The application must be fully functional using:
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+* React Router
+* Redux Toolkit
+* Recharts
+* Lucide React
+* Local JSON mock data
+* localStorage persistence
+
+The application must be designed so that later the mock-data layer can be replaced by:
+
+React Frontend
+↓
+Spring Boot REST API
+↓
+MySQL/PostgreSQL
+
+WITHOUT rebuilding the frontend architecture.
+
+The goal is:
+
+AFTER THIS DEMO IS COMPLETED, THE ONLY MAJOR REMAINING WORK SHOULD BE CONNECTING THE FRONTEND SERVICES TO THE SPRING BOOT BACKEND.
+
+Do NOT build a simple CRUD template.
+
+Build a real insurance agency/insurance management product.
+
+==================================================
+
+# 1. CORE PRODUCT OBJECTIVE
+
+==================================================
+
+The system must allow an insurance agency/admin to manage:
+
+* Customers
+* Insurance policies
+* Insurance companies
+* Premiums
+* Discounts
+* Customer payments
+* Customer pending amounts
+* Company payable amounts
+* Company payments/remittances
+* Commission
+* Renewals
+* Expiring policies
+* Overdue collections
+* Follow-ups
+* Reports
+* Users
+* Roles
+* Permissions
+* Audit logs
+* Notifications
+* Documents
+* System settings
+
+The administrator must be able to immediately answer:
+
+"Customer se kitna paisa lena hai?"
+
+"Customer ne kitna paisa diya?"
+
+"Kitna discount diya?"
+
+"Kitna pending hai?"
+
+"Kaunsi policy active hai?"
+
+"Kaunsi policy expire hone wali hai?"
+
+"Kiski renewal karni hai?"
+
+"Insurance company ko kitna paisa dena hai?"
+
+"Company ko kitna already diya?"
+
+"Company ka kitna balance hai?"
+
+"Kitna commission earn hua?"
+
+"Kaunsi insurance company ka kitna business hai?"
+
+"Kaunse customers overdue hain?"
+
+"Is month kitna collection hua?"
+
+"Kitna premium pending hai?"
+
+==================================================
+
+# 2. VERY IMPORTANT ARCHITECTURE PRINCIPLE
+
+==================================================
+
+DO NOT duplicate logic.
+
+Everything that is repeated across multiple modules must be centralized.
+
+Examples:
+
+DO NOT:
+
+Create separate sidebar in every page.
+
+DO NOT:
+
+Create separate buttons with different styles manually.
+
+DO NOT:
+
+Create separate modal implementations.
+
+DO NOT:
+
+Write currency formatting separately in every component.
+
+DO NOT:
+
+Write permission checks differently in every page.
+
+DO NOT:
+
+Write policy calculation logic inside PolicyPage.
+
+DO NOT:
+
+Hardcode colors throughout JSX.
+
+DO NOT:
+
+Hardcode route strings throughout the application.
+
+DO NOT:
+
+Hardcode menu items throughout the sidebar.
+
+DO NOT:
+
+Hardcode dashboard KPI values.
+
+DO NOT:
+
+Duplicate table implementations unnecessarily.
+
+Instead create centralized systems.
+
+==================================================
+
+# 3. CENTRALIZED CONFIGURATION SYSTEM
+
+==================================================
+
+Create a centralized configuration architecture.
+
+Create:
+
+src/config/
+
+Inside:
+
+app.config.ts
+theme.config.ts
+route.config.ts
+navigation.config.ts
+permission.config.ts
+table.config.ts
+form.config.ts
+insurance.config.ts
+currency.config.ts
+notification.config.ts
+
+All globally repeated configuration must be managed here.
+
+Example:
+
+APP_NAME
+APP_VERSION
+DEFAULT_CURRENCY
+DATE_FORMAT
+DEFAULT_PAGE_SIZE
+
+etc.
+
+If the application name changes:
+
+Change it in ONE place.
+
+If the primary color changes:
+
+Change it in ONE place.
+
+If the logo changes:
+
+Change it in ONE place.
+
+If a navigation route changes:
+
+Change it in ONE place.
+
+==================================================
+
+# 4. CENTRALIZED THEME SYSTEM
+
+==================================================
+
+Create a complete centralized theme system.
+
+Theme must control:
+
+Primary color
+Secondary color
+Background
+Sidebar
+Card
+Border
+Text
+Muted text
+Success
+Warning
+Danger
+Info
+
+Create:
+
+src/config/theme.config.ts
+
+and:
+
+src/styles/
+
+global.css
+theme.css
+
+Use CSS variables.
+
+Example conceptual architecture:
+
+--color-primary
+--color-secondary
+--color-background
+--color-surface
+--color-border
+--color-text
+--color-muted
+--color-success
+--color-warning
+--color-danger
+--color-info
+
+IMPORTANT:
+
+DO NOT hardcode colors repeatedly inside components.
+
+Bad:
+
+bg-blue-600 everywhere
+
+Good:
+
+Use centralized theme tokens.
+
+The entire application must inherit its visual identity from the centralized theme.
+
+==================================================
+
+# 5. CENTRALIZED FONT SYSTEM
+
+==================================================
+
+Font must be centrally managed.
+
+Create typography configuration.
+
+Example:
+
+src/config/theme.config.ts
+
+Typography:
+
+fontFamily
+headingFont
+bodyFont
+fontWeights
+fontSizes
+
+Do not manually select fonts in individual components.
+
+If font changes later, it should be changeable globally.
+
+Use a professional SaaS font such as:
+
+Inter
+
+or another clean modern font.
+
+Keep the architecture flexible so the font can be replaced centrally.
+
+==================================================
+
+# 6. CENTRALIZED LOGO & BRANDING
+
+==================================================
+
+Logo must NOT be hardcoded inside Sidebar.
+
+Create:
+
+src/assets/branding/
+
+logo.svg
+logo-mark.svg
+favicon.svg
+
+Create centralized branding configuration:
+
+src/config/branding.config.ts
+
+Example:
+
+APP_NAME = "InsureFlow"
+
+LOGO = ...
+
+LOGO_MARK = ...
+
+FAVICON = ...
+
+SIDEBAR_LOGO = ...
+
+All modules must use the centralized branding system.
+
+If logo is replaced later:
+
+Replace it once.
+
+Do not edit 15 components.
+
+==================================================
+
+# 7. CENTRALIZED ROUTING SYSTEM
+
+==================================================
+
+Use React Router.
+
+Create:
+
+src/routes/
+
+AppRoutes.tsx
+routeConfig.ts
+ProtectedRoute.tsx
+PermissionRoute.tsx
+
+Each module must have its own route.
+
+Example:
+
+/dashboard
+
+/customers
+/customers/:id
+/customers/new
+/customers/:id/edit
+
+/policies
+/policies/:id
+/policies/new
+/policies/:id/edit
+
+/payments
+/payments/:id
+
+/collections
+
+/renewals
+
+/insurance-companies
+/insurance-companies/:id
+
+/company-payables
+
+/commissions
+
+/reports
+
+/users
+
+/roles
+
+/settings
+
+/audit-logs
+
+/notifications
+
+Routes must NOT be scattered throughout the project.
+
+Centralize route definitions.
+
+==================================================
+
+# 8. MODULE-BASED ARCHITECTURE
+
+==================================================
+
+Every major business module must have its own folder.
+
+Example:
+
+src/modules/
+
+dashboard/
+customers/
+policies/
+payments/
+collections/
+renewals/
+insurance-companies/
+company-payables/
+commissions/
+reports/
+users/
+roles/
+notifications/
+audit-logs/
+settings/
+
+Each module should contain its own:
+
+pages
+components
+hooks
+types
+services
+validation
+config
+
+where required.
+
+Example:
+
+customers/
+
+pages/
+CustomersPage.tsx
+CustomerDetailsPage.tsx
+CustomerCreatePage.tsx
+CustomerEditPage.tsx
+
+components/
+CustomerTable.tsx
+CustomerForm.tsx
+CustomerSummary.tsx
+CustomerPolicyList.tsx
+
+hooks/
+useCustomers.ts
+
+services/
+customer.service.ts
+
+types/
+customer.types.ts
+
+validation/
+customer.validation.ts
+
+This keeps modules isolated and maintainable.
+
+==================================================
+
+# 9. COMPLETE PROJECT STRUCTURE
+
+==================================================
+
+Use a professional structure similar to:
+
+src/
+
+├── app/
+│   ├── App.tsx
+│   ├── providers/
+│   └── store/
+
+├── assets/
+│   ├── branding/
+│   ├── icons/
+│   └── images/
+
+├── components/
+│   ├── ui/
+│   │   ├── Button/
+│   │   ├── Input/
+│   │   ├── Select/
+│   │   ├── Modal/
+│   │   ├── Drawer/
+│   │   ├── Card/
+│   │   ├── Badge/
+│   │   ├── Table/
+│   │   ├── Pagination/
+│   │   ├── Tabs/
+│   │   ├── Dropdown/
+│   │   ├── DatePicker/
+│   │   ├── SearchInput/
+│   │   ├── ConfirmDialog/
+│   │   ├── EmptyState/
+│   │   ├── ErrorState/
+│   │   ├── LoadingState/
+│   │   └── Toast/
+│   │
+│   ├── layout/
+│   │   ├── AppLayout.tsx
+│   │   ├── Sidebar.tsx
+│   │   ├── Topbar.tsx
+│   │   ├── MobileNavigation.tsx
+│   │   └── Breadcrumbs.tsx
+│   │
+│   └── common/
+│       ├── PageHeader.tsx
+│       ├── StatCard.tsx
+│       ├── DataTable.tsx
+│       ├── StatusBadge.tsx
+│       ├── CurrencyDisplay.tsx
+│       ├── DateDisplay.tsx
+│       ├── PermissionGate.tsx
+│       └── SearchCommand.tsx
+│
+├── config/
+│   ├── app.config.ts
+│   ├── branding.config.ts
+│   ├── theme.config.ts
+│   ├── route.config.ts
+│   ├── navigation.config.ts
+│   ├── permission.config.ts
+│   ├── insurance.config.ts
+│   ├── currency.config.ts
+│   ├── notification.config.ts
+│   └── table.config.ts
+│
+├── constants/
+│   ├── status.constants.ts
+│   ├── payment.constants.ts
+│   ├── policy.constants.ts
+│   └── user.constants.ts
+│
+├── data/
+│   ├── customers.json
+│   ├── policies.json
+│   ├── payments.json
+│   ├── companies.json
+│   ├── companyPayments.json
+│   ├── commissions.json
+│   ├── users.json
+│   ├── roles.json
+│   ├── notifications.json
+│   └── activities.json
+│
+├── hooks/
+│   ├── useDebounce.ts
+│   ├── useLocalStorage.ts
+│   ├── usePermissions.ts
+│   ├── useAuth.ts
+│   ├── useTheme.ts
+│   └── usePagination.ts
+│
+├── lib/
+│   ├── storage/
+│   ├── validation/
+│   └── helpers/
+│
+├── routes/
+│   ├── AppRoutes.tsx
+│   ├── routeConfig.ts
+│   ├── ProtectedRoute.tsx
+│   └── PermissionRoute.tsx
+│
+├── services/
+│   ├── api/
+│   ├── mock/
+│   ├── storage/
+│   └── serviceFactory.ts
+│
+├── store/
+│   ├── index.ts
+│   ├── auth/
+│   ├── customer/
+│   ├── policy/
+│   ├── payment/
+│   ├── company/
+│   ├── notification/
+│   └── ui/
+│
+├── types/
+│   ├── common.types.ts
+│   ├── auth.types.ts
+│   ├── customer.types.ts
+│   ├── policy.types.ts
+│   ├── payment.types.ts
+│   ├── company.types.ts
+│   ├── commission.types.ts
+│   └── permission.types.ts
+│
+├── utils/
+│   ├── currency.utils.ts
+│   ├── date.utils.ts
+│   ├── calculation.utils.ts
+│   ├── policy.utils.ts
+│   ├── permission.utils.ts
+│   ├── export.utils.ts
+│   └── validation.utils.ts
+│
+├── modules/
+│   ├── dashboard/
+│   ├── customers/
+│   ├── policies/
+│   ├── payments/
+│   ├── collections/
+│   ├── renewals/
+│   ├── insurance-companies/
+│   ├── company-payables/
+│   ├── commissions/
+│   ├── reports/
+│   ├── users/
+│   ├── roles/
+│   ├── notifications/
+│   ├── audit-logs/
+│   └── settings/
+│
+├── styles/
+│   ├── global.css
+│   ├── theme.css
+│   └── typography.css
+│
+└── main.tsx
+
+Follow this architecture unless there is a very strong technical reason to improve it.
+
+Do not create unnecessary folders just for the sake of complexity.
+
+==================================================
+
+# 10. CENTRALIZED REUSABLE UI COMPONENTS
+
+==================================================
+
+Build reusable UI components.
+
+Examples:
+
+Button
+Input
+Select
+Textarea
+Checkbox
+Radio
+Switch
+DatePicker
+Modal
+Drawer
+Dropdown
+Tooltip
+Badge
+Card
+Tabs
+Table
+Pagination
+Toast
+ConfirmDialog
+Skeleton
+EmptyState
+ErrorState
+
+Every module must reuse these components.
+
+Do NOT create:
+
+CustomerButton
+PolicyButton
+PaymentButton
+
+unless there is genuinely different business behavior.
+
+Use:
+
+<Button variant="primary" />
+
+<Button variant="danger" />
+
+etc.
+
+==================================================
+
+# 11. CENTRALIZED DATA TABLE
+
+==================================================
+
+Create one reusable DataTable system.
+
+It should support:
+
+* Columns
+* Sorting
+* Searching
+* Filtering
+* Pagination
+* Row actions
+* Selection
+* Loading
+* Empty state
+* Responsive behavior
+
+Each module should configure its columns rather than rebuild tables.
+
+Example:
+
+Customer table configuration
+
+Policy table configuration
+
+Payment table configuration
+
+This makes the entire application visually consistent.
+
+==================================================
+
+# 12. CENTRALIZED FORM SYSTEM
+
+==================================================
+
+Create reusable form components.
+
+Centralize:
+
+Validation
+Error display
+Required indicators
+Field labels
+Input styles
+Submit buttons
+Loading state
+
+Use schema-based validation where practical.
+
+Do not duplicate validation logic.
+
+==================================================
+
+# 13. CENTRALIZED MONEY FORMATTING
+
+==================================================
+
+All currency must use one centralized utility.
+
+Example:
+
+formatCurrency(125000)
+
+→ ₹1,25,000
+
+Do not manually write:
+
+₹${amount}
+
+throughout the application.
+
+Currency:
+
+INR
+
+Number formatting:
+
+Indian numbering system.
+
+==================================================
+
+# 14. CENTRALIZED DATE SYSTEM
+
+==================================================
+
+All dates must use centralized utilities.
+
+Example:
+
+formatDate()
+
+formatDateTime()
+
+getDaysRemaining()
+
+isExpired()
+
+isExpiringSoon()
+
+Use:
+
+DD MMM YYYY
+
+Example:
+
+05 Oct 2026
+
+==================================================
+
+# 15. CENTRALIZED BUSINESS CALCULATION ENGINE
+
+==================================================
+
+Create:
+
+src/utils/calculation.utils.ts
+
+All insurance financial calculations must live here.
+
+Functions:
+
+calculateDiscount()
+calculateNetPremium()
+calculateTotalPaid()
+calculateCustomerPending()
+calculateCommission()
+calculateCompanyPayable()
+calculateCompanyPaid()
+calculateCompanyBalance()
+
+Formula:
+
+## Base Premium
+
+# Discount
+
+Net Premium
+
+## Net Premium
+
+# Customer Payments
+
+Customer Pending
+
+## Net Premium
+
+# Commission
+
+Company Payable
+
+## Company Payable
+
+# Company Payments
+
+Company Balance
+
+Example:
+
+Premium = ₹100,000
+
+Discount = ₹10,000
+
+Net Premium = ₹90,000
+
+Customer Paid = ₹50,000
+
+Customer Pending = ₹40,000
+
+Commission = ₹9,000
+
+Company Payable = ₹81,000
+
+Company Paid = ₹60,000
+
+Company Balance = ₹21,000
+
+These calculations must NEVER be duplicated inside pages.
+
+==================================================
+
+# 16. PERMISSION AND ROLE MANAGEMENT
+
+==================================================
+
+This is one of the MOST IMPORTANT parts.
+
+The application must use:
+
+RBAC:
+
+Role Based Access Control.
+
+Roles:
+
+SUPER_ADMIN
+ADMIN
+MANAGER
+ACCOUNTANT
+AGENT
+VIEWER
+
+Permissions must be granular.
+
+Example:
+
+dashboard.view
+
+customers.view
+customers.create
+customers.edit
+customers.delete
+
+policies.view
+policies.create
+policies.edit
+policies.delete
+
+payments.view
+payments.create
+payments.edit
+payments.delete
+
+collections.view
+
+renewals.view
+renewals.create
+
+companies.view
+companies.create
+companies.edit
+
+company_payables.view
+company_payables.create
+company_payables.edit
+
+commissions.view
+
+reports.view
+reports.export
+
+users.view
+users.create
+users.edit
+users.delete
+
+roles.view
+roles.create
+roles.edit
+
+settings.view
+settings.edit
+
+audit_logs.view
+
+==================================================
+
+# 17. SUPER ADMIN CONTROL
+
+==================================================
+
+SUPER ADMIN is the highest-level user.
+
+Super Admin can:
+
+Create users
+Edit users
+Deactivate users
+Create roles
+Edit roles
+Assign permissions
+Remove permissions
+Assign users to roles
+Control module access
+
+Example:
+
+Create "Accountant" role.
+
+Allow:
+
+Dashboard View
+Payments View
+Payments Create
+Collections View
+Company Payables View
+Reports View
+
+Deny:
+
+Customers Delete
+Policies Delete
+Users
+Settings
+Roles
+
+Then any user assigned to Accountant role must automatically see only the permitted modules.
+
+==================================================
+
+# 18. SIDEBAR MUST BE PERMISSION-AWARE
+
+==================================================
+
+DO NOT hardcode sidebar visibility.
+
+Sidebar must be generated from:
+
+navigation.config.ts
+
+*
+
+current user's permissions.
+
+Example:
+
+If user has:
+
+customers.view
+
+Then:
+
+Customers
+
+appears in sidebar.
+
+If not:
+
+Customers
+
+must not appear.
+
+Same for every module.
+
+==================================================
+
+# 19. ROUTE SECURITY
+
+==================================================
+
+Hiding sidebar items is NOT enough.
+
+Routes must also be protected.
+
+Example:
+
+User manually enters:
+
+/users
+
+but doesn't have:
+
+users.view
+
+Then:
+
+DO NOT render Users page.
+
+Show:
+
+403 — Access Denied
+
+or redirect to dashboard.
+
+Use:
+
+PermissionRoute
+
+for protected routes.
+
+==================================================
+
+# 20. ACTION-LEVEL PERMISSIONS
+
+==================================================
+
+Permissions must also control buttons.
+
+Example:
+
+User can:
+
+customers.view
+
+but cannot:
+
+customers.delete
+
+Then customer page can be opened.
+
+But:
+
+Delete button must NOT appear.
+
+Same for:
+
+Edit
+Create
+Export
+Record Payment
+Renew
+Delete
+Approve Discount
+
+This should use:
+
+<PermissionGate permission="customers.delete">
+
+etc.
+
+==================================================
+
+# 21. DISCOUNT PERMISSION
+
+==================================================
+
+Discounts are financially sensitive.
+
+Create permissions:
+
+discount.view
+
+discount.create
+
+discount.edit
+
+discount.approve
+
+For future architecture:
+
+Agent may request discount.
+
+Manager/Admin may approve.
+
+For demo:
+
+Implement basic approval status:
+
+Pending
+Approved
+Rejected
+
+==================================================
+
+# 22. AUDIT LOG
+
+==================================================
+
+Every important financial/admin action must create an audit entry.
+
+Track:
+
+User
+Date
+Action
+Module
+Entity ID
+Description
+
+Examples:
+
+Admin created customer.
+
+Manager edited policy.
+
+Accountant recorded ₹25,000 payment.
+
+Super Admin changed Accountant permissions.
+
+Admin approved ₹5,000 discount.
+
+This is important for future backend implementation.
+
+==================================================
+
+# 23. AUTHENTICATION ARCHITECTURE
+
+==================================================
+
+Create demo authentication.
+
+Demo users:
+
+Super Admin
+Admin
+Manager
+Accountant
+Agent
+Viewer
+
+Authentication can use mock/localStorage.
+
+But isolate authentication behind:
+
+authService
+
+Later replace with:
+
+Spring Boot JWT authentication.
+
+Do not spread authentication logic throughout components.
+
+==================================================
+
+# 24. NAVIGATION CONFIGURATION
+
+==================================================
+
+Create one central navigation definition.
+
+Example conceptual structure:
+
+Dashboard
+Customers
+Policies
+Payments
+Collections
+Renewals
+Insurance Companies
+Company Payables
+Commissions
+Reports
+Administration
+Users
+Roles
+Audit Logs
+Settings
+
+Each item should define:
+
+id
+label
+icon
+route
+permission
+children
+
+Sidebar should dynamically render from this config.
+
+==================================================
+
+# 25. DASHBOARD
+
+==================================================
+
+Dashboard must be permission-aware.
+
+If user has dashboard.view:
+
+Show dashboard.
+
+But dashboard widgets can also depend on permissions.
+
+For example:
+
+Accountant:
+
+Can see:
+
+Collections
+Payments
+Company Payables
+
+But not:
+
+User Management
+
+Agent:
+
+Can see:
+
+Customers
+Policies
+Renewals
+
+But not:
+
+Company Payables
+
+Super Admin:
+
+Sees everything.
+
+==================================================
+
+# 26. CUSTOMER MANAGEMENT
+
+==================================================
+
+Customers module.
+
+Features:
+
+List
+Search
+Filter
+Create
+Edit
+View
+Delete based on permission
+
+Customer fields:
+
+Customer ID
+Full Name
+Mobile
+Email
+Address
+City
+State
+Pincode
+Customer Type
+Status
+Created Date
+
+Customer detail:
+
+Overview
+Policies
+Payments
+Pending
+Documents
+Activities
+
+==================================================
+
+# 27. POLICY MANAGEMENT
+
+==================================================
+
+Policy fields:
+
+Policy ID
+Policy Number
+Customer
+Insurance Company
+Insurance Type
+Start Date
+Expiry Date
+Premium
+Discount
+Net Premium
+Paid
+Pending
+Commission
+Company Payable
+Status
+
+Separate statuses:
+
+Policy Status
+
+Payment Status
+
+Company Payment Status
+
+Do NOT combine them.
+
+==================================================
+
+# 28. PAYMENT MANAGEMENT
+
+==================================================
+
+Payment fields:
+
+Payment ID
+Customer
+Policy
+Amount
+Date
+Payment Method
+Reference Number
+Status
+Notes
+Recorded By
+
+Payment automatically updates:
+
+Customer pending
+Policy pending
+Dashboard collection
+Reports
+
+==================================================
+
+# 29. COMPANY PAYABLE MANAGEMENT
+
+==================================================
+
+Show:
+
+Gross Premium
+Commission
+Company Payable
+Company Paid
+Company Balance
+
+Allow authorized users to:
+
+View
+Record Payment
+Edit
+Export
+
+All actions permission controlled.
+
+==================================================
+
+# 30. RENEWAL MANAGEMENT
+
+==================================================
+
+Show:
+
+Expired
+Expiring in 7 days
+Expiring in 30 days
+Expiring in 60 days
+
+Renewal workflow:
+
+Old Policy
+↓
+Renewal
+↓
+New Premium
+↓
+Discount
+↓
+Payment
+↓
+New Policy
+
+Maintain old policy history.
+
+==================================================
+
+# 31. REPORTING
+
+==================================================
+
+Reports must be permission controlled.
+
+Reports:
+
+Premium Collection
+Pending Collection
+Policy
+Renewal
+Company
+Commission
+Company Payable
+Payment
+
+Date filters:
+
+Today
+Week
+Month
+Quarter
+Year
+Custom
+
+Export:
+
+CSV
+
+Print
+
+==================================================
+
+# 32. NOTIFICATION SYSTEM
+
+==================================================
+
+Centralized notification system.
+
+Types:
+
+Renewal
+Payment Pending
+Payment Received
+Company Payable
+Policy Expiry
+System
+
+Notifications must be stored in mock data.
+
+==================================================
+
+# 33. GLOBAL SEARCH
+
+==================================================
+
+Create centralized search.
+
+Search:
+
+Customers
+Policies
+Payments
+Companies
+
+Search UI should be reusable.
+
+Use debounce.
+
+Show grouped results.
+
+==================================================
+
+# 34. LOCAL STORAGE ARCHITECTURE
+
+==================================================
+
+Create centralized storage service.
+
+Do not call localStorage directly everywhere.
+
+BAD:
+
+localStorage.getItem()
+
+inside every component.
+
+GOOD:
+
+storageService.getCustomers()
+
+storageService.saveCustomers()
+
+Create:
+
+src/services/storage/
+
+storage.service.ts
+
+All localStorage operations must go through this layer.
+
+==================================================
+
+# 35. MOCK SERVICE ARCHITECTURE
+
+==================================================
+
+Create:
+
+src/services/
+
+mock/
+api/
+
+For demo:
+
+mockCustomerService
+mockPolicyService
+mockPaymentService
+
+Later:
+
+customerApiService
+policyApiService
+paymentApiService
+
+Components should not care whether data comes from:
+
+JSON
+
+or
+
+REST API.
+
+They should call the service layer.
+
+==================================================
+
+# 36. FUTURE BACKEND ADAPTER
+
+==================================================
+
+Create a service interface architecture.
+
+Example:
+
+CustomerService interface:
+
+getAll()
+getById()
+create()
+update()
+delete()
+
+Mock implementation:
+
+mockCustomerService
+
+Future implementation:
+
+customerApiService
+
+This allows backend replacement without rewriting UI.
+
+==================================================
+
+# 37. JSON MOCK DATA
+
+==================================================
+
+Create realistic dummy data.
+
+Minimum:
+
+30 Customers
+
+40 Policies
+
+60 Payments
+
+6 Insurance Companies
+
+25 Company Payments
+
+30 Commission Records
+
+20 Notifications
+
+50 Activities
+
+10 Users
+
+6 Roles
+
+Data must contain:
+
+Fully paid policies
+Partial payments
+Pending payments
+Overdue payments
+Expired policies
+Expiring policies
+Different insurance types
+Different companies
+Different commissions
+Different discounts
+
+Use fake Indian names and fake information.
+
+NEVER use real personal data.
+
+==================================================
+
+# 38. DEMO BUSINESS FLOW
+
+==================================================
+
+The entire application must support this workflow:
+
+1. Admin creates customer.
+
+2. Admin creates policy.
+
+3. Policy has premium.
+
+4. Admin applies discount.
+
+5. System calculates net premium.
+
+6. Customer makes partial payment.
+
+7. System calculates remaining pending.
+
+8. Admin records payment.
+
+9. System updates dashboard.
+
+10. Commission is calculated.
+
+11. Company payable is calculated.
+
+12. Company payment is recorded.
+
+13. Company balance updates.
+
+14. Policy approaches expiry.
+
+15. Renewal appears in renewal module.
+
+16. Admin renews policy.
+
+17. New policy/version is created.
+
+18. Old policy remains in history.
+
+Every step must work using mock data.
+
+==================================================
+
+# 39. DASHBOARD FINANCIAL FLOW
+
+==================================================
+
+Create a dedicated financial overview.
+
+CUSTOMER SIDE:
+
+Total Premium
+Total Discount
+Net Premium
+Total Collected
+Total Pending
+
+COMPANY SIDE:
+
+Gross Premium
+Commission
+Company Payable
+Company Paid
+Company Balance
+
+BUSINESS SIDE:
+
+Commission Earned
+Commission Pending
+
+Visualize:
+
+CUSTOMER
+↓
+NET PREMIUM
+↓
+PAYMENT COLLECTION
+↓
+COMMISSION
+↓
+COMPANY PAYABLE
+↓
+COMPANY REMITTANCE
+
+This must be extremely easy for an admin to understand.
+
+==================================================
+
+# 40. ERROR PREVENTION
+
+==================================================
+
+Prevent:
+
+Discount > Premium
+
+Payment > Pending
+
+Company Payment > Company Payable
+
+Negative amounts
+
+Duplicate Policy Number
+
+Invalid dates
+
+Expiry before start date
+
+Invalid commission
+
+Empty required fields
+
+Invalid customer reference
+
+Invalid insurance company reference
+
+Show proper validation messages.
+
+==================================================
+
+# 41. CONFIRMATION SYSTEM
+
+==================================================
+
+Dangerous actions require confirmation.
+
+Delete customer:
+
+Confirmation dialog.
+
+Delete policy:
+
+Confirmation dialog.
+
+Delete payment:
+
+Confirmation dialog.
+
+Change permissions:
+
+Confirmation dialog.
+
+Approve discount:
+
+Confirmation dialog.
+
+Do not use browser alert().
+
+Create reusable:
+
+ConfirmDialog component.
+
+==================================================
+
+# 42. TOAST SYSTEM
+
+==================================================
+
+Centralized toast notification.
+
+Examples:
+
+Customer created successfully.
+
+Policy created successfully.
+
+Payment recorded successfully.
+
+Renewal completed successfully.
+
+Permission updated successfully.
+
+Use one toast system throughout application.
+
+==================================================
+
+# 43. LOADING / EMPTY / ERROR STATES
+
+==================================================
+
+Every module must support:
+
+Loading
+Empty
+Error
+Success
+
+Use centralized components.
+
+Do not leave blank white screens.
+
+==================================================
+
+# 44. RESPONSIVE DESIGN
+
+==================================================
+
+Desktop:
+
+Professional sidebar.
+
+Tablet:
+
+Collapsible sidebar.
+
+Mobile:
+
+Drawer/bottom navigation.
+
+Tables:
+
+Responsive.
+
+Forms:
+
+Mobile-friendly.
+
+Cards:
+
+Responsive grid.
+
+Charts:
+
+Responsive.
+
+==================================================
+
+# 45. ACCESSIBILITY
+
+==================================================
+
+Use:
+
+Proper labels
+Keyboard navigation
+Focus states
+ARIA labels where required
+Good contrast
+Accessible buttons
+Accessible forms
+
+Do not rely only on color to communicate status.
+
+==================================================
+
+# 46. PERFORMANCE
+
+==================================================
+
+Use:
+
+Lazy-loaded routes where practical.
+
+Memoization where useful.
+
+Debounced search.
+
+Pagination.
+
+Avoid unnecessary re-renders.
+
+Do not over-optimize prematurely.
+
+==================================================
+
+# 47. CODE QUALITY RULES
+
+==================================================
+
+Strict TypeScript.
+
+Avoid any.
+
+No duplicate business logic.
+
+No duplicate UI components.
+
+No hardcoded financial calculations.
+
+No hardcoded permissions.
+
+No hardcoded navigation.
+
+No hardcoded colors throughout components.
+
+No direct localStorage access from components.
+
+No giant App.tsx.
+
+No giant Dashboard.tsx.
+
+No giant PolicyPage.tsx.
+
+Keep components focused.
+
+==================================================
+
+# 48. FILE NAMING
+
+==================================================
+
+Use consistent naming.
+
+Components:
+
+PascalCase.tsx
+
+Hooks:
+
+useSomething.ts
+
+Services:
+
+something.service.ts
+
+Types:
+
+something.types.ts
+
+Utils:
+
+something.utils.ts
+
+Config:
+
+something.config.ts
+
+Constants:
+
+something.constants.ts
+
+==================================================
+
+# 49. DESIGN CONSISTENCY
+
+==================================================
+
+Every page must follow the same structure:
+
+PageHeader
+
+Title
+Description
+Actions
+
+Content
+
+Cards
+
+Tables
+
+Filters
+
+Pagination
+
+No page should look like it was built by a different developer.
+
+==================================================
+
+# 50. SETTINGS / WHITE-LABEL ARCHITECTURE
+
+==================================================
+
+The system should be prepared for future white-labeling.
+
+Centralize:
+
+Agency Name
+Logo
+Logo Mark
+Primary Color
+Secondary Color
+Font
+Currency
+Date Format
+
+Future admin should be able to customize branding.
+
+Do NOT scatter branding values throughout code.
+
+==================================================
+
+# 51. ADMIN SETTINGS
+
+==================================================
+
+Create settings sections:
+
+General
+Branding
+Appearance
+Currency
+Date & Time
+Notifications
+Policy Settings
+Payment Settings
+
+For demo:
+
+Allow changing:
+
+Agency Name
+Primary Color
+Logo placeholder
+Currency display
+Theme mode
+
+Changes should reflect globally.
+
+==================================================
+
+# 52. THEME SWITCH
+
+==================================================
+
+Support:
+
+Light Mode
+Dark Mode
+
+Theme must be centrally controlled.
+
+Do not implement dark mode by manually changing every component.
+
+Use centralized CSS variables/theme tokens.
+
+==================================================
+
+# 53. SUPER ADMIN USER MANAGEMENT
+
+==================================================
+
+Super Admin page:
+
+Users table:
+
+Name
+Email
+Role
+Status
+Last Login
+Created Date
+Actions
+
+Actions:
+
+Create
+Edit
+Activate
+Deactivate
+Assign Role
+
+==================================================
+
+# 54. ROLE MANAGEMENT
+
+==================================================
+
+Roles page:
+
+Role Name
+Description
+Users Count
+Permissions Count
+Status
+
+Role detail:
+
+Module
+View
+Create
+Edit
+Delete
+Approve
+Export
+
+Use permission matrix.
+
+Example:
+
+```
+             View Create Edit Delete Export Approve
+```
+
+Customers          ✓     ✓      ✓     -      ✓      -
+
+Policies            ✓     ✓      ✓     -      ✓      -
+
+Payments            ✓     ✓      ✓     -      ✓      -
+
+Users               ✓     ✓      ✓     ✓      -      -
+
+Permissions should be configurable.
+
+==================================================
+
+# 55. PERMISSION ASSIGNMENT LOGIC
+
+==================================================
+
+When Super Admin changes a role:
+
+All users with that role should immediately inherit the updated permissions in the demo state.
+
+Do not manually assign permissions separately to every user unless required.
+
+Architecture:
+
+User
+↓
+Role
+↓
+Permissions
+
+Support optional direct permissions later.
+
+==================================================
+
+# 56. ROUTE + MENU + ACTION CONSISTENCY
+
+==================================================
+
+IMPORTANT:
+
+Permissions must control THREE things:
+
+1. Sidebar visibility
+
+2. Route access
+
+3. Action/button visibility
+
+Example:
+
+If user lacks:
+
+policies.delete
+
+Then:
+
+Delete button hidden.
+
+If user lacks:
+
+policies.view
+
+Then:
+
+Policy menu hidden.
+
+If user manually enters:
+
+/policies
+
+without policies.view:
+
+Access denied.
+
+All three must be synchronized through the centralized permission system.
+
+==================================================
+
+# 57. BUSINESS LOGIC MUST NOT LIVE IN UI
+
+==================================================
+
+BAD:
+
+PolicyPage.tsx calculates:
+
+premium - discount - payments
+
+GOOD:
+
+calculation.utils.ts
+
+The UI only displays calculated results.
+
+This is important because the future Spring Boot backend will eventually become the source of truth.
+
+==================================================
+
+# 58. FUTURE BACKEND MIGRATION
+
+==================================================
+
+Prepare frontend interfaces for future API.
+
+Future:
+
+POST /api/customers
+
+GET /api/customers
+
+GET /api/customers/{id}
+
+PUT /api/customers/{id}
+
+DELETE /api/customers/{id}
+
+Similar patterns for:
+
+policies
+payments
+companies
+renewals
+commissions
+reports
+users
+roles
+
+Do NOT actually require backend now.
+
+But structure the frontend so API integration is straightforward.
+
+==================================================
+
+# 59. BACKEND SOURCE OF TRUTH
+
+==================================================
+
+IMPORTANT FUTURE RULE:
+
+Frontend calculations are for DEMO/UI purposes.
+
+In production:
+
+Financial calculations MUST be validated/recalculated by backend.
+
+Never trust client-side financial calculations for real accounting.
+
+Prepare the architecture accordingly.
+
+==================================================
+
+# 60. DEMO LOGIN
+
+==================================================
+
+Create:
+
+[admin@insureflow.demo](mailto:admin@insureflow.demo)
+
+Password:
+
+Admin@123
+
+Also provide demo accounts for:
+
+Admin
+Manager
+Accountant
+Agent
+Viewer
+
+Each should have different permissions.
+
+This is only mock authentication.
+
+==================================================
+
+# 61. FINAL TESTING
+
+==================================================
+
+Before declaring the project complete:
+
+Run:
+
+npm install
+
+npm run dev
+
+npm run build
+
+Check:
+
+No TypeScript errors.
+
+No runtime errors.
+
+No console errors.
+
+No broken imports.
+
+No broken routes.
+
+No missing assets.
+
+No broken buttons.
+
+No fake CRUD.
+
+No hardcoded dashboard values.
+
+No duplicated business calculations.
+
+No direct localStorage access in components.
+
+No permission bypass.
+
+No broken responsive layout.
+
+==================================================
+
+# 62. REQUIRED DEMO TEST SCENARIOS
+
+==================================================
+
+Test scenario 1:
+
+Create customer.
+
+Create policy.
+
+Apply discount.
+
+Record partial payment.
+
+Verify pending.
+
+Verify dashboard.
+
+Verify commission.
+
+Verify company payable.
+
+Verify company payment.
+
+Verify company balance.
+
+---
+
+Test scenario 2:
+
+Login as Agent.
+
+Verify restricted modules.
+
+Verify restricted buttons.
+
+Try manually opening restricted route.
+
+Verify access denied.
+
+---
+
+Test scenario 3:
+
+Login as Super Admin.
+
+Create role.
+
+Assign permissions.
+
+Assign role to user.
+
+Login as that user.
+
+Verify sidebar changes.
+
+Verify routes change.
+
+Verify actions change.
+
+---
+
+Test scenario 4:
+
+Change primary theme color.
+
+Verify entire application changes.
+
+Change agency name.
+
+Verify sidebar/topbar/login/branding changes.
+
+Change theme mode.
+
+Verify entire application changes.
+
+==================================================
+
+# 63. IMPORTANT: DO NOT OVER-ENGINEER
+
+==================================================
+
+This is a DEMO.
+
+Do NOT implement:
+
+Real payment gateway
+Real SMS
+Real WhatsApp
+Real insurance company APIs
+Real KYC
+Real Aadhaar
+Real PAN
+Real banking integration
+Real document verification
+Real email service
+Real cloud storage
+
+Create clean placeholders/interfaces for future integration.
+
+==================================================
+
+# 64. FINAL EXPECTED RESULT
+
+==================================================
+
+The final application should feel like a real commercial insurance management SaaS product.
+
+It should NOT feel like:
+
+"AI generated admin dashboard."
+
+It should feel like:
+
+"A professional insurance agency management platform."
+
+The UI must be polished.
+
+The architecture must be scalable.
+
+The code must be maintainable.
+
+The business logic must be centralized.
+
+The routes must be centralized.
+
+The permissions must be centralized.
+
+The theme must be centralized.
+
+The branding must be centralized.
+
+The components must be reusable.
+
+The mock data must be realistic.
+
+The application must actually work.
+
+==================================================
+
+# 65. FINAL ARCHITECTURE PRINCIPLE
+
+==================================================
+
+Follow this principle everywhere:
+
+ONE SOURCE OF TRUTH.
+
+ONE CENTRAL CONFIGURATION.
+
+ONE CENTRAL THEME.
+
+ONE CENTRAL ROUTING SYSTEM.
+
+ONE CENTRAL PERMISSION SYSTEM.
+
+ONE CENTRAL CALCULATION ENGINE.
+
+ONE CENTRAL STORAGE SERVICE.
+
+ONE CENTRAL API/SERVICE LAYER.
+
+ONE REUSABLE UI SYSTEM.
+
+MODULE-SPECIFIC BUSINESS FEATURES.
+
+The frontend should be completely ready for:
+
+React
+↓
+Service Layer
+↓
+Spring Boot REST API
+↓
+MySQL/PostgreSQL
+
+The backend integration should NOT require redesigning the UI architecture.
+
+==================================================
+
+# 66. DO NOT JUST GIVE ME CODE
+
+==================================================
+
+You are acting as a coding agent.
+
+Actually create and modify the project files.
+
+Do not only explain what should be done.
+
+Build the complete application.
+
+After implementation:
+
+1. Start the application.
+2. Test every route.
+3. Test every module.
+4. Test permissions.
+5. Test CRUD.
+6. Test calculations.
+7. Test localStorage.
+8. Test theme changes.
+9. Test responsive UI.
+10. Run production build.
+11. Fix all errors.
+12. Only then report completion.
+
+At the end provide:
+
+* Project structure
+* Implemented modules
+* Demo credentials
+* Permission model
+* Mock data explanation
+* How to run
+* Future Spring Boot integration points
+* Any remaining limitations
+
+DO NOT STOP AFTER BUILDING THE DASHBOARD.
+
+BUILD THE COMPLETE WORKING FRONTEND DEMO.
+
+
+                    SUPER ADMIN
+                         │
+                         ▼
+                    ROLE MANAGEMENT
+                         │
+                         ▼
+                     PERMISSIONS
+                         │
+          ┌──────────────┼──────────────┐
+          ▼              ▼              ▼
+       SIDEBAR         ROUTES         ACTIONS
+          │              │              │
+          └──────────────┼──────────────┘
+                         ▼
+                  MODULE ACCESS
+                         │
+     ┌───────────┬───────┼────────┬───────────┐
+     ▼           ▼       ▼        ▼           ▼
+ Customers    Policies Payments Renewals   Reports
+     │           │       │        │           │
+     └───────────┴───────┼────────┴───────────┘
+                         ▼
+                CENTRAL SERVICES
+                         │
+          ┌──────────────┼──────────────┐
+          ▼              ▼              ▼
+       Mock JSON      localStorage    Future API
+                                        │
+                                        ▼
+                                   Spring Boot
+                                        │
+                                        ▼
+                                  MySQL/PostgreSQL
+
+
+
+
+theme.config.ts
+      ↓
+CSS Variables
+      ↓
+Global Theme
+      ↓
+All Components
+      ↓
+All Modules

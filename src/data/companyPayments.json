@@ -1,0 +1,72 @@
+[
+  {
+    "id": "cpay-701",
+    "remittanceNumber": "REM-2025-001",
+    "insuranceCompanyId": "comp-101",
+    "insuranceCompanyName": "HDFC ERGO General Insurance",
+    "policyIds": ["pol-1001", "pol-1011", "pol-1027"],
+    "amount": 75140,
+    "paymentDate": "2025-11-05T11:00:00Z",
+    "paymentMethod": "NET_BANKING",
+    "referenceNumber": "CMS/HDFC/99201923",
+    "notes": "Monthly batch remittance for net premiums after commission deduction",
+    "recordedBy": "Vikram Sethi",
+    "createdAt": "2025-11-05T11:30:00Z"
+  },
+  {
+    "id": "cpay-702",
+    "remittanceNumber": "REM-2025-002",
+    "insuranceCompanyId": "comp-103",
+    "insuranceCompanyName": "Star Health and Allied Insurance",
+    "policyIds": ["pol-1002", "pol-1009", "pol-1020"],
+    "amount": 1139000,
+    "paymentDate": "2025-12-20T14:00:00Z",
+    "paymentMethod": "NET_BANKING",
+    "referenceNumber": "RTGS/STAR/8810293",
+    "notes": "Remittance for corporate group and individual health policies",
+    "recordedBy": "Vikram Sethi",
+    "createdAt": "2025-12-20T14:30:00Z"
+  },
+  {
+    "id": "cpay-703",
+    "remittanceNumber": "REM-2025-003",
+    "insuranceCompanyId": "comp-105",
+    "insuranceCompanyName": "Tata AIG General Insurance",
+    "policyIds": ["pol-1004", "pol-1010"],
+    "amount": 744000,
+    "paymentDate": "2025-11-10T10:00:00Z",
+    "paymentMethod": "NET_BANKING",
+    "referenceNumber": "NEFT/TATA/7719203",
+    "notes": "Commercial lines net premium transfer",
+    "recordedBy": "Vikram Sethi",
+    "createdAt": "2025-11-10T10:30:00Z"
+  },
+  {
+    "id": "cpay-704",
+    "remittanceNumber": "REM-2025-004",
+    "insuranceCompanyId": "comp-104",
+    "insuranceCompanyName": "Bajaj Allianz General Insurance",
+    "policyIds": ["pol-1005", "pol-1012", "pol-1018"],
+    "amount": 112500,
+    "paymentDate": "2025-12-01T15:00:00Z",
+    "paymentMethod": "NET_BANKING",
+    "referenceNumber": "NEFT/BAJAJ/6619203",
+    "notes": "Settlement of net property and motor premiums",
+    "recordedBy": "Vikram Sethi",
+    "createdAt": "2025-12-01T15:30:00Z"
+  },
+  {
+    "id": "cpay-705",
+    "remittanceNumber": "REM-2025-005",
+    "insuranceCompanyId": "comp-106",
+    "insuranceCompanyName": "New India Assurance Co. Ltd.",
+    "policyIds": ["pol-1013", "pol-1019"],
+    "amount": 491400,
+    "paymentDate": "2026-01-05T12:00:00Z",
+    "paymentMethod": "NET_BANKING",
+    "referenceNumber": "RTGS/NIA/5510293",
+    "notes": "Remittance for property and motor policies",
+    "recordedBy": "Vikram Sethi",
+    "createdAt": "2026-01-05T12:30:00Z"
+  }
+]

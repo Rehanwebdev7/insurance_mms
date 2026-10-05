@@ -1,0 +1,80 @@
+[
+  {
+    "id": "comp-101",
+    "code": "HDFC-ERGO",
+    "name": "HDFC ERGO General Insurance",
+    "logo": "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=120&auto=format&fit=crop&q=80",
+    "contactPerson": "Sanjay Kapoor",
+    "email": "partners@hdfcergo.demo",
+    "phone": "+91 98200 11223",
+    "address": "HDFC House, 165-166 Backbay Reclamation, Mumbai 400020",
+    "defaultCommissionRate": 15,
+    "status": "ACTIVE",
+    "createdAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": "comp-102",
+    "code": "ICICI-LOMBARD",
+    "name": "ICICI Lombard General Insurance",
+    "logo": "https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=120&auto=format&fit=crop&q=80",
+    "contactPerson": "Pooja Malhotra",
+    "email": "agency@icicilombard.demo",
+    "phone": "+91 98211 44556",
+    "address": "ICICI Lombard House, 414 Veer Savarkar Marg, Prabhadevi, Mumbai 400025",
+    "defaultCommissionRate": 12,
+    "status": "ACTIVE",
+    "createdAt": "2024-01-16T11:00:00Z"
+  },
+  {
+    "id": "comp-103",
+    "code": "STAR-HEALTH",
+    "name": "Star Health and Allied Insurance",
+    "logo": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=120&auto=format&fit=crop&q=80",
+    "contactPerson": "Dr. V. Ramanathan",
+    "email": "corporate@starhealth.demo",
+    "phone": "+91 94440 88990",
+    "address": "No. 15, Sri Balaji Complex, Whites Road, Royapettah, Chennai 600014",
+    "defaultCommissionRate": 18,
+    "status": "ACTIVE",
+    "createdAt": "2024-01-18T09:30:00Z"
+  },
+  {
+    "id": "comp-104",
+    "code": "BAJAJ-ALLIANZ",
+    "name": "Bajaj Allianz General Insurance",
+    "logo": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=120&auto=format&fit=crop&q=80",
+    "contactPerson": "Amitesh Deshmukh",
+    "email": "brokers@bajajallianz.demo",
+    "phone": "+91 98900 33445",
+    "address": "GE Plaza, Airport Road, Yerawada, Pune 411006",
+    "defaultCommissionRate": 10,
+    "status": "ACTIVE",
+    "createdAt": "2024-01-20T14:15:00Z"
+  },
+  {
+    "id": "comp-105",
+    "code": "TATA-AIG",
+    "name": "Tata AIG General Insurance",
+    "logo": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=120&auto=format&fit=crop&q=80",
+    "contactPerson": "Rohan Mehta",
+    "email": "support@tataaig.demo",
+    "phone": "+91 98111 77889",
+    "address": "Peninsula Business Park, Tower A, Lower Parel, Mumbai 400013",
+    "defaultCommissionRate": 14,
+    "status": "ACTIVE",
+    "createdAt": "2024-02-01T10:00:00Z"
+  },
+  {
+    "id": "comp-106",
+    "code": "NEW-INDIA",
+    "name": "New India Assurance Co. Ltd.",
+    "logo": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=120&auto=format&fit=crop&q=80",
+    "contactPerson": "Sunil Narang",
+    "email": "agency@newindia.demo",
+    "phone": "+91 98333 22110",
+    "address": "87 M.G. Road, Fort, Mumbai 400001",
+    "defaultCommissionRate": 10,
+    "status": "ACTIVE",
+    "createdAt": "2024-02-05T08:45:00Z"
+  }
+]

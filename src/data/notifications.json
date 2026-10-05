@@ -1,0 +1,74 @@
+[
+  {
+    "id": "notif-1",
+    "title": "Policy Expiry Notice",
+    "message": "Policy POL-2025-8803 (Meera Joshi) expires in 2 days.",
+    "type": "RENEWAL",
+    "read": false,
+    "createdAt": "2026-10-05T08:00:00Z",
+    "link": "/policies/pol-1003"
+  },
+  {
+    "id": "notif-2",
+    "title": "Pending Customer Collection Overdue",
+    "message": "TechCorp Solutions pending amount of ₹2,00,000 is due today.",
+    "type": "PAYMENT_PENDING",
+    "read": false,
+    "createdAt": "2026-10-05T07:30:00Z",
+    "link": "/collections"
+  },
+  {
+    "id": "notif-3",
+    "title": "Payment Received",
+    "message": "Received ₹40,000 payment from Aarav Sharma via UPI.",
+    "type": "PAYMENT_RECEIVED",
+    "read": true,
+    "createdAt": "2026-10-04T16:00:00Z",
+    "link": "/payments"
+  },
+  {
+    "id": "notif-4",
+    "title": "Company Remittance Required",
+    "message": "ICICI Lombard payable balance of ₹1,64,000 requires remittance clearance.",
+    "type": "COMPANY_PAYABLE",
+    "read": false,
+    "createdAt": "2026-10-04T10:15:00Z",
+    "link": "/company-payables"
+  },
+  {
+    "id": "notif-5",
+    "title": "Discount Approval Requested",
+    "message": "Agent Karan Malhotra requested ₹2,000 discount on Policy POL-2025-8815.",
+    "type": "SYSTEM",
+    "read": false,
+    "createdAt": "2026-10-03T14:20:00Z",
+    "link": "/policies/pol-1015"
+  },
+  {
+    "id": "notif-6",
+    "title": "Policy Expired",
+    "message": "Policy POL-2025-8805 (Vikramaditya Roy) has expired.",
+    "type": "POLICY_EXPIRY",
+    "read": true,
+    "createdAt": "2026-09-15T00:00:00Z",
+    "link": "/renewals"
+  },
+  {
+    "id": "notif-7",
+    "title": "Commission Credited",
+    "message": "Commission of ₹6,000 earned for Policy POL-2025-8801.",
+    "type": "SYSTEM",
+    "read": true,
+    "createdAt": "2026-09-10T12:00:00Z",
+    "link": "/commissions"
+  },
+  {
+    "id": "notif-8",
+    "title": "New Customer Onboarded",
+    "message": "Vanguard Security Services registered as corporate customer.",
+    "type": "SYSTEM",
+    "read": true,
+    "createdAt": "2026-09-08T09:00:00Z",
+    "link": "/customers/cust-29"
+  }
+]

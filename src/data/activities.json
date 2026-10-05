@@ -1,0 +1,68 @@
+[
+  {
+    "id": "act-1",
+    "userId": "usr-1",
+    "userName": "Super Admin User",
+    "userRole": "SUPER_ADMIN",
+    "action": "CREATE_USER",
+    "module": "Administration",
+    "entityId": "usr-5",
+    "description": "Created new agent user account 'Amit Patel'",
+    "timestamp": "2026-10-05T09:10:00Z"
+  },
+  {
+    "id": "act-2",
+    "userId": "usr-4",
+    "userName": "Vikram Sethi",
+    "userRole": "ACCOUNTANT",
+    "action": "RECORD_PAYMENT",
+    "module": "Payments",
+    "entityId": "pay-501",
+    "description": "Recorded customer payment of ₹40,000 for Policy POL-2025-8801",
+    "timestamp": "2026-10-04T16:30:00Z"
+  },
+  {
+    "id": "act-3",
+    "userId": "usr-3",
+    "userName": "Priya Verma",
+    "userRole": "MANAGER",
+    "action": "APPROVE_DISCOUNT",
+    "module": "Discounts",
+    "entityId": "pol-1001",
+    "description": "Approved ₹5,000 loyalty discount for customer Aarav Sharma",
+    "timestamp": "2026-10-04T14:15:00Z"
+  },
+  {
+    "id": "act-4",
+    "userId": "usr-2",
+    "userName": "Rajesh Sharma",
+    "userRole": "ADMIN",
+    "action": "CREATE_POLICY",
+    "module": "Policies",
+    "entityId": "pol-1002",
+    "description": "Created Corporate Group Mediclaim policy for TechCorp Solutions",
+    "timestamp": "2026-10-03T11:00:00Z"
+  },
+  {
+    "id": "act-5",
+    "userId": "usr-1",
+    "userName": "Super Admin User",
+    "userRole": "SUPER_ADMIN",
+    "action": "UPDATE_ROLE_PERMISSIONS",
+    "module": "Administration",
+    "entityId": "role-4",
+    "description": "Updated permissions matrix for Accountant role",
+    "timestamp": "2026-10-02T15:45:00Z"
+  },
+  {
+    "id": "act-6",
+    "userId": "usr-4",
+    "userName": "Vikram Sethi",
+    "userRole": "ACCOUNTANT",
+    "action": "RECORD_COMPANY_REMITTANCE",
+    "module": "Company Remittance",
+    "entityId": "cpay-701",
+    "description": "Recorded batch remittance of ₹75,140 to HDFC ERGO General Insurance",
+    "timestamp": "2026-10-01T10:00:00Z"
+  }
+]

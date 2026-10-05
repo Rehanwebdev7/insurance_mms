@@ -1,0 +1,91 @@
+:root {
+  /* Brand Theme Tokens - Light Default */
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-light: #eff6ff;
+  --color-secondary: #475569;
+  
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f1f5f9;
+  --color-card: #ffffff;
+  --color-border: #e2e8f0;
+  --color-border-hover: #cbd5e1;
+  
+  --color-text: #0f172a;
+  --color-text-secondary: #475569;
+  --color-muted: #64748b;
+  --color-disabled: #94a3b8;
+  
+  --color-sidebar-bg: #0f172a;
+  --color-sidebar-text: #94a3b8;
+  --color-sidebar-text-active: #ffffff;
+  --color-sidebar-item-hover: #1e293b;
+  --color-sidebar-item-active: #2563eb;
+  --color-sidebar-border: #1e293b;
+  
+  --color-topbar-bg: #ffffff;
+  --color-topbar-border: #e2e8f0;
+  
+  /* Status tokens */
+  --color-success: #10b981;
+  --color-success-bg: #ecfdf5;
+  --color-success-text: #047857;
+  
+  --color-warning: #f59e0b;
+  --color-warning-bg: #fffbeb;
+  --color-warning-text: #b45309;
+  
+  --color-danger: #ef4444;
+  --color-danger-bg: #fef2f2;
+  --color-danger-text: #b91c1c;
+  
+  --color-info: #06b6d4;
+  --color-info-bg: #ecfeff;
+  --color-info-text: #0e7490;
+  
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.dark {
+  --color-primary: #3b82f6;
+  --color-primary-hover: #60a5fa;
+  --color-primary-light: #1e293b;
+  --color-secondary: #94a3b8;
+  
+  --color-bg: #0b0f17;
+  --color-surface: #151c28;
+  --color-surface-hover: #1e293b;
+  --color-card: #151c28;
+  --color-border: #1f293d;
+  --color-border-hover: #334155;
+  
+  --color-text: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-muted: #94a3b8;
+  --color-disabled: #64748b;
+  
+  --color-sidebar-bg: #090d16;
+  --color-sidebar-text: #94a3b8;
+  --color-sidebar-text-active: #ffffff;
+  --color-sidebar-item-hover: #151c28;
+  --color-sidebar-item-active: #3b82f6;
+  --color-sidebar-border: #1f293d;
+  
+  --color-topbar-bg: #151c28;
+  --color-topbar-border: #1f293d;
+  
+  --color-success-bg: rgba(16, 185, 129, 0.15);
+  --color-success-text: #34d399;
+  
+  --color-warning-bg: rgba(245, 158, 11, 0.15);
+  --color-warning-text: #fbbf24;
+  
+  --color-danger-bg: rgba(239, 68, 68, 0.15);
+  --color-danger-text: #f87171;
+  
+  --color-info-bg: rgba(6, 182, 212, 0.15);
+  --color-info-text: #22d3ee;
+}

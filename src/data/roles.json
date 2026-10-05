@@ -1,0 +1,107 @@
+[
+  {
+    "id": "role-1",
+    "code": "SUPER_ADMIN",
+    "name": "Super Administrator",
+    "description": "Full unmitigated access to all modules, financial management, user accounts, system configuration, and audit logs.",
+    "permissions": [
+      "dashboard.view", "customers.view", "customers.create", "customers.edit", "customers.delete",
+      "policies.view", "policies.create", "policies.edit", "policies.delete",
+      "payments.view", "payments.create", "payments.edit", "payments.delete", "collections.view",
+      "renewals.view", "renewals.create",
+      "companies.view", "companies.create", "companies.edit",
+      "company_payables.view", "company_payables.create", "company_payables.edit",
+      "commissions.view", "reports.view", "reports.export",
+      "users.view", "users.create", "users.edit", "users.delete",
+      "roles.view", "roles.create", "roles.edit",
+      "settings.view", "settings.edit", "audit_logs.view",
+      "discount.view", "discount.create", "discount.edit", "discount.approve"
+    ],
+    "isSystem": true,
+    "userCount": 2,
+    "updatedAt": "2026-09-01T10:00:00Z"
+  },
+  {
+    "id": "role-2",
+    "code": "ADMIN",
+    "name": "Agency Administrator",
+    "description": "Full access to operational modules, customer & policy management, discounting, and payments. Cannot edit system roles.",
+    "permissions": [
+      "dashboard.view", "customers.view", "customers.create", "customers.edit", "customers.delete",
+      "policies.view", "policies.create", "policies.edit", "policies.delete",
+      "payments.view", "payments.create", "payments.edit", "payments.delete", "collections.view",
+      "renewals.view", "renewals.create",
+      "companies.view", "companies.create", "companies.edit",
+      "company_payables.view", "company_payables.create", "company_payables.edit",
+      "commissions.view", "reports.view", "reports.export",
+      "users.view", "users.create", "users.edit",
+      "roles.view", "settings.view", "settings.edit", "audit_logs.view",
+      "discount.view", "discount.create", "discount.edit", "discount.approve"
+    ],
+    "isSystem": true,
+    "userCount": 2,
+    "updatedAt": "2026-09-01T10:00:00Z"
+  },
+  {
+    "id": "role-3",
+    "code": "MANAGER",
+    "name": "Branch Manager",
+    "description": "Manages customers, policy creation, renewals, discounting approvals, and standard reports.",
+    "permissions": [
+      "dashboard.view", "customers.view", "customers.create", "customers.edit",
+      "policies.view", "policies.create", "policies.edit",
+      "payments.view", "payments.create", "collections.view",
+      "renewals.view", "renewals.create", "companies.view",
+      "company_payables.view", "commissions.view",
+      "reports.view", "reports.export",
+      "discount.view", "discount.create", "discount.approve"
+    ],
+    "isSystem": true,
+    "userCount": 2,
+    "updatedAt": "2026-09-01T10:00:00Z"
+  },
+  {
+    "id": "role-4",
+    "code": "ACCOUNTANT",
+    "name": "Finance & Accountant",
+    "description": "Focuses on customer payments, pending collection follow-ups, company remittances, and financial reporting.",
+    "permissions": [
+      "dashboard.view", "customers.view", "policies.view",
+      "payments.view", "payments.create", "payments.edit", "collections.view",
+      "company_payables.view", "company_payables.create", "company_payables.edit",
+      "commissions.view", "reports.view", "reports.export"
+    ],
+    "isSystem": true,
+    "userCount": 2,
+    "updatedAt": "2026-09-01T10:00:00Z"
+  },
+  {
+    "id": "role-5",
+    "code": "AGENT",
+    "name": "Insurance Agent",
+    "description": "Creates and manages customer leads, issues draft policies, and tracks policy renewals and earned commissions.",
+    "permissions": [
+      "dashboard.view", "customers.view", "customers.create", "customers.edit",
+      "policies.view", "policies.create",
+      "renewals.view", "renewals.create",
+      "discount.view", "discount.create",
+      "commissions.view"
+    ],
+    "isSystem": true,
+    "userCount": 3,
+    "updatedAt": "2026-09-01T10:00:00Z"
+  },
+  {
+    "id": "role-6",
+    "code": "VIEWER",
+    "name": "Read-Only Auditor",
+    "description": "Read-only access across customers, policies, payments, and reports for compliance and auditing.",
+    "permissions": [
+      "dashboard.view", "customers.view", "policies.view",
+      "payments.view", "renewals.view", "companies.view", "reports.view"
+    ],
+    "isSystem": true,
+    "userCount": 1,
+    "updatedAt": "2026-09-01T10:00:00Z"
+  }
+]

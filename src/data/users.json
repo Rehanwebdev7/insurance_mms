@@ -1,0 +1,122 @@
+[
+  {
+    "id": "usr-1",
+    "name": "Super Admin User",
+    "email": "admin@insureflow.demo",
+    "phone": "+91 98200 99887",
+    "role": "SUPER_ADMIN",
+    "roleName": "Super Administrator",
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&auto=format&fit=crop&q=80",
+    "status": "ACTIVE",
+    "lastLogin": "2026-10-05T09:15:00Z",
+    "createdAt": "2024-01-01T08:00:00Z"
+  },
+  {
+    "id": "usr-2",
+    "name": "Rajesh Sharma",
+    "email": "rajesh.admin@insureflow.demo",
+    "phone": "+91 98190 12345",
+    "role": "ADMIN",
+    "roleName": "Agency Administrator",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80",
+    "status": "ACTIVE",
+    "lastLogin": "2026-10-04T16:30:00Z",
+    "createdAt": "2024-01-10T10:00:00Z"
+  },
+  {
+    "id": "usr-3",
+    "name": "Priya Verma",
+    "email": "manager@insureflow.demo",
+    "phone": "+91 98765 43210",
+    "role": "MANAGER",
+    "roleName": "Branch Manager",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&auto=format&fit=crop&q=80",
+    "status": "ACTIVE",
+    "lastLogin": "2026-10-05T08:45:00Z",
+    "createdAt": "2024-02-01T09:00:00Z"
+  },
+  {
+    "id": "usr-4",
+    "name": "Vikram Sethi",
+    "email": "accountant@insureflow.demo",
+    "phone": "+91 99887 76655",
+    "role": "ACCOUNTANT",
+    "roleName": "Finance & Accountant",
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&auto=format&fit=crop&q=80",
+    "status": "ACTIVE",
+    "lastLogin": "2026-10-05T07:20:00Z",
+    "createdAt": "2024-02-15T11:00:00Z"
+  },
+  {
+    "id": "usr-5",
+    "name": "Amit Patel",
+    "email": "agent@insureflow.demo",
+    "phone": "+91 97123 88990",
+    "role": "AGENT",
+    "roleName": "Insurance Agent",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80",
+    "status": "ACTIVE",
+    "lastLogin": "2026-10-03T14:10:00Z",
+    "createdAt": "2024-03-01T10:00:00Z"
+  },
+  {
+    "id": "usr-6",
+    "name": "Sunita Rao",
+    "email": "viewer@insureflow.demo",
+    "phone": "+91 96543 21098",
+    "role": "VIEWER",
+    "roleName": "Read-Only Auditor",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&auto=format&fit=crop&q=80",
+    "status": "ACTIVE",
+    "lastLogin": "2026-10-01T11:00:00Z",
+    "createdAt": "2024-03-10T12:00:00Z"
+  },
+  {
+    "id": "usr-7",
+    "name": "Karan Malhotra",
+    "email": "karan.agent@insureflow.demo",
+    "phone": "+91 98222 33445",
+    "role": "AGENT",
+    "roleName": "Insurance Agent",
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&auto=format&fit=crop&q=80",
+    "status": "ACTIVE",
+    "lastLogin": "2026-09-28T10:00:00Z",
+    "createdAt": "2024-04-01T09:00:00Z"
+  },
+  {
+    "id": "usr-8",
+    "name": "Neha Gupta",
+    "email": "neha.agent@insureflow.demo",
+    "phone": "+91 99111 22334",
+    "role": "AGENT",
+    "roleName": "Insurance Agent",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80",
+    "status": "ACTIVE",
+    "lastLogin": "2026-10-02T15:20:00Z",
+    "createdAt": "2024-04-15T10:30:00Z"
+  },
+  {
+    "id": "usr-9",
+    "name": "Rohan Deshmukh",
+    "email": "rohan.acc@insureflow.demo",
+    "phone": "+91 98444 55667",
+    "role": "ACCOUNTANT",
+    "roleName": "Finance & Accountant",
+    "avatar": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=120&auto=format&fit=crop&q=80",
+    "status": "ACTIVE",
+    "lastLogin": "2026-09-29T16:00:00Z",
+    "createdAt": "2024-05-01T11:00:00Z"
+  },
+  {
+    "id": "usr-10",
+    "name": "Ananya Iyer",
+    "email": "ananya.mgr@insureflow.demo",
+    "phone": "+91 97333 44556",
+    "role": "MANAGER",
+    "roleName": "Branch Manager",
+    "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&auto=format&fit=crop&q=80",
+    "status": "INACTIVE",
+    "lastLogin": "2026-08-15T09:00:00Z",
+    "createdAt": "2024-05-10T14:00:00Z"
+  }
+]
